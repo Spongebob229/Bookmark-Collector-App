@@ -15,6 +15,14 @@
 		0AD407412BE7B8270054A7EA /* ButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD407402BE7B8270054A7EA /* ButtonType.swift */; };
 		0AD407432BE7B8FB0054A7EA /* MainTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD407422BE7B8FB0054A7EA /* MainTitle.swift */; };
 		0AD407472BE7B9BB0054A7EA /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD407462BE7B9BB0054A7EA /* WelcomeScreen.swift */; };
+		0AD4074A2BE7C28D0054A7EA /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD407492BE7C28D0054A7EA /* MainScreen.swift */; };
+		0AD4074C2BE7D0880054A7EA /* BookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4074B2BE7D0880054A7EA /* BookmarkView.swift */; };
+		0AD4074E2BE7DC960054A7EA /* BookmarkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4074D2BE7DC960054A7EA /* BookmarkModel.swift */; };
+		0AD407502BE7E15C0054A7EA /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4074F2BE7E15C0054A7EA /* WebView.swift */; };
+		0AD407522BE7E4F70054A7EA /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD407512BE7E4F70054A7EA /* InputField.swift */; };
+		0AD407542BE7E69E0054A7EA /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD407532BE7E69E0054A7EA /* SheetView.swift */; };
+		0AD407572BE7E83C0054A7EA /* BookmarkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD407562BE7E83C0054A7EA /* BookmarkListViewModel.swift */; };
+		0AD407592BE7EB250054A7EA /* BookmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD407582BE7EB250054A7EA /* BookmarkList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +35,14 @@
 		0AD407402BE7B8270054A7EA /* ButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonType.swift; path = ../ButtonType.swift; sourceTree = "<group>"; };
 		0AD407422BE7B8FB0054A7EA /* MainTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTitle.swift; sourceTree = "<group>"; };
 		0AD407462BE7B9BB0054A7EA /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
+		0AD407492BE7C28D0054A7EA /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		0AD4074B2BE7D0880054A7EA /* BookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkView.swift; sourceTree = "<group>"; };
+		0AD4074D2BE7DC960054A7EA /* BookmarkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkModel.swift; sourceTree = "<group>"; };
+		0AD4074F2BE7E15C0054A7EA /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		0AD407512BE7E4F70054A7EA /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
+		0AD407532BE7E69E0054A7EA /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
+		0AD407562BE7E83C0054A7EA /* BookmarkListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListViewModel.swift; sourceTree = "<group>"; };
+		0AD407582BE7EB250054A7EA /* BookmarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +77,7 @@
 			children = (
 				0AD4072E2BE7B4760054A7EA /* Bookmark_Collector_AppApp.swift */,
 				0AD407302BE7B4760054A7EA /* ContentView.swift */,
+				0AD407552BE7E7E50054A7EA /* Storage */,
 				0AD407482BE7C0640054A7EA /* Enums */,
 				0AD407452BE7B9A40054A7EA /* Screens */,
 				0AD407442BE7B90C0054A7EA /* Elements */,
@@ -82,6 +99,11 @@
 			isa = PBXGroup;
 			children = (
 				0AD4073C2BE7B5C30054A7EA /* MainButton.swift */,
+				0AD407582BE7EB250054A7EA /* BookmarkList.swift */,
+				0AD4074F2BE7E15C0054A7EA /* WebView.swift */,
+				0AD4074B2BE7D0880054A7EA /* BookmarkView.swift */,
+				0AD407512BE7E4F70054A7EA /* InputField.swift */,
+				0AD407532BE7E69E0054A7EA /* SheetView.swift */,
 				0AD407422BE7B8FB0054A7EA /* MainTitle.swift */,
 			);
 			path = Elements;
@@ -91,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				0AD407462BE7B9BB0054A7EA /* WelcomeScreen.swift */,
+				0AD407492BE7C28D0054A7EA /* MainScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -101,6 +124,15 @@
 				0AD407402BE7B8270054A7EA /* ButtonType.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		0AD407552BE7E7E50054A7EA /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				0AD407562BE7E83C0054A7EA /* BookmarkListViewModel.swift */,
+				0AD4074D2BE7DC960054A7EA /* BookmarkModel.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,11 +206,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AD407472BE7B9BB0054A7EA /* WelcomeScreen.swift in Sources */,
+				0AD407592BE7EB250054A7EA /* BookmarkList.swift in Sources */,
+				0AD407522BE7E4F70054A7EA /* InputField.swift in Sources */,
+				0AD407502BE7E15C0054A7EA /* WebView.swift in Sources */,
+				0AD4074A2BE7C28D0054A7EA /* MainScreen.swift in Sources */,
 				0AD407312BE7B4760054A7EA /* ContentView.swift in Sources */,
 				0AD407412BE7B8270054A7EA /* ButtonType.swift in Sources */,
 				0AD4072F2BE7B4760054A7EA /* Bookmark_Collector_AppApp.swift in Sources */,
+				0AD407572BE7E83C0054A7EA /* BookmarkListViewModel.swift in Sources */,
 				0AD407432BE7B8FB0054A7EA /* MainTitle.swift in Sources */,
+				0AD4074C2BE7D0880054A7EA /* BookmarkView.swift in Sources */,
 				0AD4073D2BE7B5C30054A7EA /* MainButton.swift in Sources */,
+				0AD407542BE7E69E0054A7EA /* SheetView.swift in Sources */,
+				0AD4074E2BE7DC960054A7EA /* BookmarkModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

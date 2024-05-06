@@ -8,37 +8,48 @@
 import SwiftUI
 
 struct WelcomeScreen: View {
+    @State var showMainScreen = false
+    
     var body: some View {
-        VStack(spacing: 0) {
-            Image("WelcomeScreenBackground")
-                .resizable()
-                .frame(height: 614)
-                .padding(.bottom, 6)
-                .overlay(
-                    LinearGradient(
-                        gradient: Gradient(colors: [.clear, Color.black.opacity(0.2)]),
-                        startPoint: .top,
-                        endPoint: .bottom
+        NavigationStack {
+            VStack(spacing: 0) {
+                Image("WelcomeScreenBackground")
+                    .resizable()
+                    .frame(height: 614)
+                    .padding(.bottom, 6)
+                    .overlay(
+                        LinearGradient(
+                            gradient: Gradient(colors: [.clear, Color.black.opacity(0.2)]),
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
                     )
-                )
-            
-            HStack {
-                MainTitle(title: "Save all interesting links in one app", color: .white)
+                
+                HStack {
+                    MainTitle(title: "Save all interesting links in one app", color: .white)
+                    Spacer()
+                }
+                .padding(.bottom, 24)
+                .padding(.horizontal, 8)
+                
+                
+                MainButton(title: "Let’s start collecting", type: .light) {
+                    showMainScreen.toggle()
+                }
+                .padding(.horizontal, 8)
+                
+                NavigationLink(isActive: $showMainScreen) {
+                    MainScreen()
+                } label: {
+                    EmptyView()
+                }
+                
                 Spacer()
             }
-            .padding(.bottom, 24)
-            .padding(.horizontal, 8)
             
-            
-            MainButton(title: "Let’s start collecting", type: .light) {
-                
-            }
-            .padding(.horizontal, 8)
-            Spacer()
+            .background(Color.black)
+            .ignoresSafeArea()
         }
-        
-        .background(Color.black)
-        .ignoresSafeArea()
     }
 }
 
