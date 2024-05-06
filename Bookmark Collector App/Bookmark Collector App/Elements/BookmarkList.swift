@@ -8,21 +8,45 @@
 import SwiftUI
 
 struct BookmarkList: View {
-    @EnvironmentObject var bookmarkStorage: BookmarkListViewModel
+    @EnvironmentObject var bookmarkListViewModels: BookmarkListViewModel
+    @State var showAlert = false
     var body: some View {
         VStack(spacing: 0) {
-            if bookmarkStorage.bookmarks.isEmpty {
+            if bookmarkListViewModels.bookmarks.isEmpty {
                 MainTitle(title: Constants.mainTitleText, color: .black)
                     .multilineTextAlignment(.center)
             }
             else {
                 ScrollView {
-                    ForEach(bookmarkStorage.bookmarks) { bookmark in
+                    ForEach(bookmarkListViewModels.bookmarks) { bookmark in
                         BookmarkView(bookmark: bookmark)
                     }
                 }
             }
         }
+        .onAppear {
+            Task {
+                Task {
+                    do {
+                        try await bookmarkListViewModels.getModels()
+                    } catch {
+                        showAlert.toggle()
+                    }
+                }
+            }
+        }
+        .alert("Error;)", isPresented: $showAlert) {
+            Button("OK", role: .cancel) { }
+        }
+        .onChange(of: bookmarkListViewModels) { _ in
+                    Task {
+                        do {
+                            try await bookmarkListViewModels.getModels()
+                        } catch {
+                            showAlert.toggle()
+                        }
+                    }
+                }
     }
 }
 

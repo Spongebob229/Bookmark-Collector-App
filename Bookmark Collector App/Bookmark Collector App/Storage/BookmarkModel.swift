@@ -7,9 +7,8 @@
 
 import Foundation
 
-struct BookmarkModel: Identifiable {
-    var id = UUID()
-    
+struct BookmarkModel: Identifiable, Codable, Equatable {
+    var id: String
     let name: String
     let link: String
 }

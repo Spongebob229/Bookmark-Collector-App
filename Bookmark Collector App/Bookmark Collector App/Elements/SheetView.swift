@@ -12,6 +12,8 @@ struct SheetView: View {
     @State var name: String = ""
     @State var link: String = ""
     @Binding var showSheet: Bool
+    @State var showErrorAlert = false
+    @State var showEmptyAlert = false
     
     var body: some View {
         VStack(spacing: 0) {
@@ -52,11 +54,25 @@ struct SheetView: View {
             Spacer()
             
             MainButton(title: "Save", type: .dark) {
-                bookmarkListViewModel.addBookmark(name: name, link: link)
-                showSheet.toggle()
+                if name.isEmpty || link.isEmpty {
+                    showEmptyAlert.toggle()
+                } else {
+                    do {
+                        bookmarkListViewModel.addBookmark(name: name, link: link)
+                        showSheet.toggle()
+                    } catch {
+                        showErrorAlert.toggle()
+                    }
+                }
             }
             .padding(.bottom, 16)
              
+        }
+        .alert("Error", isPresented: $showErrorAlert) {
+            Button("OK", role: .cancel) { }
+        }
+        .alert("Fill all the fields", isPresented: $showEmptyAlert) {
+            Button("OK", role: .cancel) { }
         }
         .padding(.horizontal)
     }
