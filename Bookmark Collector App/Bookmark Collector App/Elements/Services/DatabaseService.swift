@@ -23,8 +23,9 @@ final class DatabaseService {
         try bookmarksCollectionReference.document(bookmark.id).setData(from: bookmark)
     }
     
-    func getBookmarkList() async throws -> [BookmarkModel] {
+    func getBookmarkList(creationId: String) async throws -> [BookmarkModel] {
         try await bookmarksCollectionReference
+            .whereField("creatorId", isEqualTo: creationId)
             .getDocuments()
             .documents.map { try $0.data(as: BookmarkModel.self) }
     }

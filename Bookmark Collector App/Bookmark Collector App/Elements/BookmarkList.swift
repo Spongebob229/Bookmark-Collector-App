@@ -10,6 +10,7 @@ import SwiftUI
 struct BookmarkList: View {
     @EnvironmentObject var bookmarkListViewModels: BookmarkListViewModel
     @State var showAlert = false
+    
     var body: some View {
         VStack(spacing: 0) {
             if bookmarkListViewModels.bookmarks.isEmpty {
@@ -26,27 +27,16 @@ struct BookmarkList: View {
         }
         .onAppear {
             Task {
-                Task {
-                    do {
-                        try await bookmarkListViewModels.getModels()
-                    } catch {
-                        showAlert.toggle()
-                    }
+                do {
+                    try await bookmarkListViewModels.getModels()
+                } catch {
+                    showAlert.toggle()
                 }
             }
         }
         .alert("Error;)", isPresented: $showAlert) {
             Button("OK", role: .cancel) { }
         }
-        .onChange(of: bookmarkListViewModels) { _ in
-                    Task {
-                        do {
-                            try await bookmarkListViewModels.getModels()
-                        } catch {
-                            showAlert.toggle()
-                        }
-                    }
-                }
     }
 }
 

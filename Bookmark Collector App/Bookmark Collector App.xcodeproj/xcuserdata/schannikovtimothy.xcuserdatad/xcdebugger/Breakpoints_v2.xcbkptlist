@@ -7,17 +7,65 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E62D372D-4C3F-4EC7-9EEF-089CDB65229A"
+            uuid = "F264D443-B29C-48F0-BB8E-80ABDF2877AF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Bookmark Collector App/Elements/SheetView.swift"
+            filePath = "Bookmark Collector App/Storage/BookmarkListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "getModels()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E297D52F-8D4B-4DBA-8A8B-9EB9AFBAB5D2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bookmark Collector App/Elements/Services/DatabaseService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "getBookmarkList(creationId:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E297D52F-8D4B-4DBA-8A8B-9EB9AFBAB5D2 - 2caca6461e048171"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Bookmark_Collector_App.DatabaseService.getBookmarkList(creationId: Swift.String) async throws -&gt; Swift.Array&lt;Bookmark_Collector_App.BookmarkModel&gt;"
+                  moduleName = "Bookmark Collector App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/schannikovtimothy/Documents/GitHub/Bookmark-Collector-App/Bookmark%20Collector%20App/Bookmark%20Collector%20App/Elements/Services/DatabaseService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "E297D52F-8D4B-4DBA-8A8B-9EB9AFBAB5D2 - ba07798186a26245"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.FIRQueryDocumentSnapshot) throws -&gt; Bookmark_Collector_App.BookmarkModel in Bookmark_Collector_App.DatabaseService.getBookmarkList(creationId: Swift.String) async throws -&gt; Swift.Array&lt;Bookmark_Collector_App.BookmarkModel&gt;"
+                  moduleName = "Bookmark Collector App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/schannikovtimothy/Documents/GitHub/Bookmark-Collector-App/Bookmark%20Collector%20App/Bookmark%20Collector%20App/Elements/Services/DatabaseService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

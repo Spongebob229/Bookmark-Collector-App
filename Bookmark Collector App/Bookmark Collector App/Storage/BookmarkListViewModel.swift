@@ -7,29 +7,20 @@
 
 import Foundation
 
-class BookmarkListViewModel: ObservableObject, Equatable {
-    static func == (lhs: BookmarkListViewModel, rhs: BookmarkListViewModel) -> Bool {
-        return lhs.bookmarks == rhs.bookmarks
-    }
-    
+class BookmarkListViewModel: ObservableObject {
    @Published var bookmarks: [BookmarkModel] = []
+    let userId: String = AuthService.shared.user?.uid ?? ""
     
-    func addBookmark(name: String, link: String) {
+    func addBookmark(name: String, link: String) throws {
         let id = UUID().uuidString
-        Task {
-            do {
-                let bookmarkModel = BookmarkModel(id: id, name: name, link: link)
-                try DatabaseService.shared.createBookmarkDocument(bookmark: bookmarkModel)
-                bookmarks.append(BookmarkModel(id: id, name: name, link: link))
-                
-            } catch {
-                print("lol")
-            }
-        }
+        let bookmarkModel = BookmarkModel(id: id, name: name, link: link, creatorId: userId)
+        try DatabaseService.shared.createBookmarkDocument(bookmark: bookmarkModel)
+        bookmarks.append(BookmarkModel(id: id, name: name, link: link, creatorId: userId))
+        
     }
     
     @MainActor func getModels() async throws {
-        let models = try await DatabaseService.shared.getBookmarkList()
+        let models = try await DatabaseService.shared.getBookmarkList(creationId: userId)
         
         bookmarks += models
     }

@@ -21,6 +21,18 @@ struct InputField: View {
     }
 }
 
+struct SecureInputField: View {
+    @Binding var text: String
+    
+    var body: some View {
+        SecureField("Password", text: $text)
+            .padding(.leading, 16)
+            .frame(width: 358, height: 46)
+            .background(.lightGray)
+            .cornerRadius(12.0)
+    }
+}
+
 #Preview {
     InputField(placeholder: "Hello",text: .constant("Hello"))
 }

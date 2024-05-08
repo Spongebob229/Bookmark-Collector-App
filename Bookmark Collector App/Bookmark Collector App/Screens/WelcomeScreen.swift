@@ -9,6 +9,8 @@ import SwiftUI
 
 struct WelcomeScreen: View {
     @State var showMainScreen = false
+    @State var showBottomSheet = false
+    @State var authType: AuthType = .signIn
     
     var body: some View {
         NavigationStack {
@@ -34,7 +36,22 @@ struct WelcomeScreen: View {
                 
                 
                 MainButton(title: "Let’s start collecting", type: .light) {
-                    showMainScreen.toggle()
+                    AuthService.shared.user != nil ? showMainScreen.toggle() : showBottomSheet.toggle()
+                }
+                .sheet(isPresented: $showBottomSheet) {
+                    if(authType == .signIn) {
+                        LoginScreen(showMainScreen: $showMainScreen, authType: $authType)
+                            .padding()
+                            .presentationDetents([.medium])
+                            .presentationCornerRadius(20)
+                        
+                    }
+                    else {
+                        RegistrationScreen(showContentView: $showMainScreen, authType: $authType)
+                            .padding()
+                            .presentationDetents([.height(530)])
+                            .presentationCornerRadius(20)
+                    }
                 }
                 .padding(.horizontal, 8)
                 

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A77DE572BEAA161002B9A5D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77DE562BEAA161002B9A5D /* AuthService.swift */; };
+		0A77DE592BEAA184002B9A5D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0A77DE582BEAA184002B9A5D /* FirebaseAuth */; };
+		0A77DE5B2BEAA409002B9A5D /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77DE5A2BEAA409002B9A5D /* LoginScreen.swift */; };
+		0A77DE5D2BEAA437002B9A5D /* AuthType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77DE5C2BEAA437002B9A5D /* AuthType.swift */; };
+		0A77DE5F2BEAA62C002B9A5D /* RegistrationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77DE5E2BEAA62C002B9A5D /* RegistrationScreen.swift */; };
 		0AD4072F2BE7B4760054A7EA /* Bookmark_Collector_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD4072E2BE7B4760054A7EA /* Bookmark_Collector_AppApp.swift */; };
 		0AD407312BE7B4760054A7EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD407302BE7B4760054A7EA /* ContentView.swift */; };
 		0AD407332BE7B4780054A7EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AD407322BE7B4780054A7EA /* Assets.xcassets */; };
@@ -34,6 +39,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A77DE562BEAA161002B9A5D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		0A77DE5A2BEAA409002B9A5D /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		0A77DE5C2BEAA437002B9A5D /* AuthType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthType.swift; sourceTree = "<group>"; };
+		0A77DE5E2BEAA62C002B9A5D /* RegistrationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationScreen.swift; sourceTree = "<group>"; };
 		0AD4072B2BE7B4760054A7EA /* Bookmark Collector App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bookmark Collector App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AD4072E2BE7B4760054A7EA /* Bookmark_Collector_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark_Collector_AppApp.swift; sourceTree = "<group>"; };
 		0AD407302BE7B4760054A7EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,6 +74,7 @@
 				0AD407602BE93B9B0054A7EA /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				0AD407662BE93B9B0054A7EA /* FirebaseAppCheck in Frameworks */,
 				0AD407642BE93B9B0054A7EA /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				0A77DE592BEAA184002B9A5D /* FirebaseAuth in Frameworks */,
 				0AD4076C2BE940CC0054A7EA /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +143,8 @@
 			children = (
 				0AD407462BE7B9BB0054A7EA /* WelcomeScreen.swift */,
 				0AD407492BE7C28D0054A7EA /* MainScreen.swift */,
+				0A77DE5A2BEAA409002B9A5D /* LoginScreen.swift */,
+				0A77DE5E2BEAA62C002B9A5D /* RegistrationScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -141,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				0AD407402BE7B8270054A7EA /* ButtonType.swift */,
+				0A77DE5C2BEAA437002B9A5D /* AuthType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -158,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				0AD407682BE93DD90054A7EA /* DatabaseService.swift */,
+				0A77DE562BEAA161002B9A5D /* AuthService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -192,6 +206,7 @@
 				0AD407632BE93B9B0054A7EA /* FirebaseAnalyticsWithoutAdIdSupport */,
 				0AD407652BE93B9B0054A7EA /* FirebaseAppCheck */,
 				0AD4076B2BE940CC0054A7EA /* FirebaseFirestore */,
+				0A77DE582BEAA184002B9A5D /* FirebaseAuth */,
 			);
 			productName = "Bookmark Collector App";
 			productReference = 0AD4072B2BE7B4760054A7EA /* Bookmark Collector App.app */;
@@ -257,15 +272,19 @@
 				0AD407502BE7E15C0054A7EA /* WebView.swift in Sources */,
 				0AD4074A2BE7C28D0054A7EA /* MainScreen.swift in Sources */,
 				0AD407312BE7B4760054A7EA /* ContentView.swift in Sources */,
+				0A77DE5B2BEAA409002B9A5D /* LoginScreen.swift in Sources */,
 				0AD407692BE93DD90054A7EA /* DatabaseService.swift in Sources */,
 				0AD407412BE7B8270054A7EA /* ButtonType.swift in Sources */,
 				0AD4072F2BE7B4760054A7EA /* Bookmark_Collector_AppApp.swift in Sources */,
 				0AD407572BE7E83C0054A7EA /* BookmarkListViewModel.swift in Sources */,
 				0AD407432BE7B8FB0054A7EA /* MainTitle.swift in Sources */,
 				0AD4074C2BE7D0880054A7EA /* BookmarkView.swift in Sources */,
+				0A77DE5F2BEAA62C002B9A5D /* RegistrationScreen.swift in Sources */,
 				0AD4073D2BE7B5C30054A7EA /* MainButton.swift in Sources */,
 				0AD407542BE7E69E0054A7EA /* SheetView.swift in Sources */,
+				0A77DE5D2BEAA437002B9A5D /* AuthType.swift in Sources */,
 				0AD4074E2BE7DC960054A7EA /* BookmarkModel.swift in Sources */,
+				0A77DE572BEAA161002B9A5D /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +501,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0A77DE582BEAA184002B9A5D /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0AD4075C2BE93B9B0054A7EA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
 		0AD4075D2BE93B9B0054A7EA /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0AD4075C2BE93B9B0054A7EA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

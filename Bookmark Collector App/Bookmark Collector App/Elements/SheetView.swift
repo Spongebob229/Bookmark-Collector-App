@@ -58,7 +58,7 @@ struct SheetView: View {
                     showEmptyAlert.toggle()
                 } else {
                     do {
-                        bookmarkListViewModel.addBookmark(name: name, link: link)
+                        try bookmarkListViewModel.addBookmark(name: name, link: link)
                         showSheet.toggle()
                     } catch {
                         showErrorAlert.toggle()
